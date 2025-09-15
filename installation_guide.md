@@ -1,26 +1,35 @@
-# 魔兽世界火法一键宏完整安装指南
-# Complete Installation Guide for WoW Fire Mage One-Button Macro
+# 魔兽世界火法一键宏完整安装指南 - 地心之战11.2版本
+# Complete Installation Guide for WoW Fire Mage One-Button Macro - The War Within 11.2
 
-## 🔥 宏特点 (Macro Features)
-- ✅ 全自动技能循环 (Fully automated skill rotation)
-- ✅ 智能CD判断 (Intelligent cooldown management)
-- ✅ 燃烧阶段优化 (Optimized combustion phase)
+## 🔥 宏特点 - 11.2版本更新 (Macro Features - 11.2 Updates)
+- ✅ 全自动技能循环 (Fully automated skill rotation) - 地心之战优化
+- ✅ 智能CD判断 (Intelligent cooldown management) - 500+装等适配
+- ✅ 燃烧阶段优化 (Optimized combustion phase) - 11.2机制更新
 - ✅ 自动目标选择 (Automatic target selection)
 - ✅ 移动施法支持 (Movement casting support)
 - ✅ 紧急技能响应 (Emergency skill response)
 - ✅ AOE群体输出 (AOE multi-target support)
+- ✅ 英雄天赋集成 (Hero talent integration) - 新增功能
+
+## 📋 系统要求 (System Requirements)
+
+### 游戏版本要求 (Game Version Requirements)
+- **魔兽世界版本**: 11.2地心之战或更高
+- **角色等级**: 满级（70+）
+- **装备等级**: 500+（推荐520+以获得最佳效果）
+- **天赋**: 火系专精 + 推荐英雄天赋路线
 
 ## 📋 安装步骤 (Installation Steps)
 
-### 第一步：创建基础宏 (Step 1: Create Basic Macro)
+### 第一步：创建基础宏 11.2版本 (Step 1: Create Basic Macro for 11.2)
 
 1. 进入游戏，按 `ESC` 键
 2. 点击 "宏命令" (Macros)
 3. 点击 "新建" (New)
 4. 选择角色专用宏
 5. 选择火焰图标
-6. 命名为 "火法一键"
-7. 复制以下代码：
+6. 命名为 "火法一键11.2"
+7. 复制以下11.2优化代码：
 
 ```
 #showtooltip
@@ -31,9 +40,9 @@
 /cast [mod:shift] Ice Block
 /cast [nochanneling,buff:Combustion] Fire Blast
 /cast [nochanneling,buff:Hot Streak] Pyroblast
-/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast
-/cast [nochanneling,charges:2] Fire Blast
-/cast [nochanneling,charges:3] Phoenix Flames
+/cast [nochanneling,buff:Heating Up,charges:>=1] Fire Blast
+/cast [nochanneling,charges:>=2] Fire Blast
+/cast [nochanneling,charges:>=2] Phoenix Flames
 /cast [nochanneling,target.health.pct<=30] Scorch
 /cast [nochanneling,moving] Scorch
 /cast [nochanneling] Fireball
@@ -57,27 +66,52 @@
 /cast [buff:Hot Streak] Pyroblast
 ```
 
-### 第三步：创建AOE宏 (Step 3: Create AOE Macro)
+### 第三步：创建AOE宏 11.2版本 (Step 3: Create AOE Macro for 11.2)
 
-创建第三个宏，命名为 "AOE群体"：
+创建第三个宏，命名为 "AOE群体11.2"：
 
 ```
 #showtooltip Flamestrike
 /stopcasting
 /targetenemy [noharm][dead]
 /cast [mod:alt] Counterspell
-/cast [nochanneling,talent:Living Bomb] Living Bomb
+/cast [nochanneling] Living Bomb
 /cast [nochanneling,buff:Hot Streak] Flamestrike
-/cast [nochanneling,charges:2] Fire Blast
-/cast [nochanneling,charges:3] Phoenix Flames  
+/cast [nochanneling,charges:>=2] Fire Blast
+/cast [nochanneling,charges:>=2] Phoenix Flames  
 /cast [nochanneling] Flamestrike
 ```
 
-## ⚙️ 插件推荐 (Recommended Addons)
+## ⚙️ 插件推荐 - 地心之战版本 (Recommended Addons for The War Within)
 
 ### 必备插件 (Essential Addons)
-1. **WeakAuras2** - 显示buff和CD状态
-2. **GSE (GnomeSequencer Enhanced)** - 高级宏序列
+1. **WeakAuras2** - 显示buff和CD状态（更新至11.2兼容版本）
+2. **Details!** - 伤害统计插件（支持地心之战数据）
+3. **BigWigs/DBM** - 团队副本警报（地心之战团本支持）
+
+### 可选插件 (Optional Addons)
+1. **Plater** - 名字板美化（11.2优化版本）
+2. **ElvUI** - 界面整合（支持英雄天赋显示）
+3. **SimulationCraft** - 装备优化（500+装等分析）
+
+## 🎯 天赋配置指南 - 11.2版本 (Talent Configuration Guide for 11.2)
+
+### 专业天赋树 (Class Talents)
+**推荐配置（基于500+装等）**：
+- **移动性**: 灼烧 + 闪现类天赋
+- **输出核心**: 火焰冲击 + 烈焰护体 + 燃烧
+- **工具技能**: 法术反制 + 龙息术
+
+### 英雄天赋选择 (Hero Talents)
+**太阳王的祝福 (Sunfury)**：
+- 推荐用于团队副本单体输出
+- 增强燃烧期间的爆发伤害
+- 适合高装等环境
+
+**法术破坏者 (Spellslinger)**：
+- 推荐用于M+和生存需求
+- 提供更多控制和机动性
+- 适合复杂战斗环境
 3. **Details!** - 伤害统计
 4. **BigWigs/DBM** - 团队副本助手
 

@@ -59,10 +59,10 @@
 /targetenemy [noharm][dead]
 /cast [mod:alt] Counterspell
 /cast [mod:ctrl] Dragon's Breath
-/cast [nochanneling,talent:Living Bomb] Living Bomb
+/cast [nochanneling] Living Bomb
 /cast [nochanneling,buff:Hot Streak] Flamestrike
-/cast [nochanneling,charges:2] Fire Blast
-/cast [nochanneling,charges:3] Phoenix Flames
+/cast [nochanneling,charges:>=2] Fire Blast
+/cast [nochanneling,charges:>=2] Phoenix Flames
 /cast [nochanneling] Flamestrike
 
 -- ====================================
@@ -115,9 +115,9 @@ Sequences['FireMageUltimate'] = {
     '/cast [mod:shift] Combustion',
     '/cast [nochanneling,buff:Hot Streak] Pyroblast',
     '/cast [nochanneling,buff:Combustion] Fire Blast',
-    '/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast',
-    '/cast [nochanneling,charges:2] Fire Blast',
-    '/cast [nochanneling,charges:3] Phoenix Flames',
+    '/cast [nochanneling,buff:Heating Up,charges:>=1] Fire Blast',
+    '/cast [nochanneling,charges:>=2] Fire Blast',
+    '/cast [nochanneling,charges:>=2] Phoenix Flames',
     '/cast [nochanneling,target.health.pct<=30] Scorch',
     '/cast [nochanneling,moving] Scorch',
     '/cast [nochanneling] Fireball',
@@ -146,7 +146,7 @@ Sequences['FireMageUltimate'] = {
 #showtooltip
 /use [combat] 13
 /use [combat] 14
-/cast [nochanneling,talent:Combustion] Combustion
+/cast [nochanneling] Combustion
 
 -- ====================================
 -- 移动施法宏
