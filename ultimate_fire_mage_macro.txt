@@ -1,0 +1,164 @@
+-- 魔兽世界火法极限输出一键宏 v2.0
+-- Fire Mage Ultimate DPS One-Button Macro v2.0
+-- 智能CD管理系统 + 自动优先级判断
+
+-- ====================================
+-- 超级一键宏 - 终极版本
+-- ====================================
+
+/run if not FireMageHelper then FireMageHelper = {} end
+/script FireMageHelper.lastCast = FireMageHelper.lastCast or 0
+/script FireMageHelper.combatStart = FireMageHelper.combatStart or 0
+
+-- 主宏 - 请复制以下内容到游戏内
+#showtooltip
+/stopcasting
+/targetenemy [noharm][dead]
+-- 紧急技能响应
+/cast [mod:alt] Counterspell; [mod:ctrl] Dragon's Breath; [mod:shift] Ice Block
+-- 燃烧阶段检测和执行
+/run local inCombustion = UnitBuff("player", "Combustion"); if inCombustion then CastSpellByName("Fire Blast") end
+/cast [nochanneling,buff:Combustion,buff:Hot Streak] Pyroblast
+/cast [nochanneling,buff:Combustion] Fire Blast
+-- 热连击优先级
+/cast [nochanneling,buff:Hot Streak] Pyroblast
+-- 加热状态处理
+/cast [nochanneling,buff:Heating Up,charges:2] Fire Blast
+/cast [nochanneling,buff:Heating Up,charges:1] Phoenix Flames
+-- 充能管理
+/cast [nochanneling,charges:2] Fire Blast
+/cast [nochanneling,charges:3] Phoenix Flames
+-- 特殊情况处理
+/cast [nochanneling,target.health.pct<=30,talent:Searing Touch] Scorch
+/cast [nochanneling,moving] Scorch
+-- 基础技能
+/cast [nochanneling] Fireball
+
+-- ====================================
+-- 燃烧爆发专用宏
+-- ====================================
+
+#showtooltip Combustion
+/stopcasting
+/cast [nochanneling] Combustion
+/cast [nochanneling] Fire Blast
+/cast [nochanneling,buff:Hot Streak] Pyroblast
+/cast [nochanneling] Fire Blast
+/cast [nochanneling,buff:Hot Streak] Pyroblast
+/cast [nochanneling] Phoenix Flames
+/cast [nochanneling,buff:Hot Streak] Pyroblast
+/cast [nochanneling] Fire Blast
+/cast [nochanneling,buff:Hot Streak] Pyroblast
+
+-- ====================================
+-- AOE群体宏
+-- ====================================
+
+#showtooltip Flamestrike
+/stopcasting
+/targetenemy [noharm][dead]
+/cast [mod:alt] Counterspell
+/cast [mod:ctrl] Dragon's Breath
+/cast [nochanneling,talent:Living Bomb] Living Bomb
+/cast [nochanneling,buff:Hot Streak] Flamestrike
+/cast [nochanneling,charges:2] Fire Blast
+/cast [nochanneling,charges:3] Phoenix Flames
+/cast [nochanneling] Flamestrike
+
+-- ====================================
+-- 智能辅助脚本 (WeakAuras)
+-- ====================================
+
+-- 创建自定义的WeakAuras触发器脚本
+function()
+    local hotStreak = UnitBuff("player", "Hot Streak")
+    local heatingUp = UnitBuff("player", "Heating Up")
+    local combustion = UnitBuff("player", "Combustion")
+    local fireBlastCharges = GetSpellCharges(108853)
+    local phoenixCharges = GetSpellCharges(257541)
+    
+    if combustion then
+        return true, "COMBUSTION ACTIVE!"
+    elseif hotStreak then
+        return true, "HOT STREAK - CAST PYROBLAST!"
+    elseif heatingUp and fireBlastCharges >= 1 then
+        return true, "USE FIRE BLAST!"
+    elseif fireBlastCharges >= 2 then
+        return true, "FIRE BLAST READY (2+ charges)"
+    elseif phoenixCharges >= 3 then
+        return true, "PHOENIX FLAMES READY"
+    end
+    
+    return false
+end
+
+-- ====================================
+-- GSE (GnomeSequencer Enhanced) 版本
+-- ====================================
+
+Sequences['FireMageUltimate'] = {
+    -- Metadata
+    Author="FireMageHelper",
+    SpecID=63,
+    Talents = "3,2,3,1,2,3,2",
+    Help = [[Fire Mage Ultimate DPS Sequence]],
+    
+    -- Pre Macro
+    PreMacro = [[
+/targetenemy [noharm][dead]
+/stopcasting
+]],
+    
+    -- Main Sequence
+    '/cast [mod:alt] Counterspell',
+    '/cast [mod:ctrl] Dragon\'s Breath',
+    '/cast [mod:shift] Combustion',
+    '/cast [nochanneling,buff:Hot Streak] Pyroblast',
+    '/cast [nochanneling,buff:Combustion] Fire Blast',
+    '/cast [nochanneling,buff:Heating Up,charges:2] Fire Blast',
+    '/cast [nochanneling,charges:3] Phoenix Flames',
+    '/cast [nochanneling,target.health.pct<=30] Scorch',
+    '/cast [nochanneling,moving] Scorch',
+    '/cast [nochanneling] Fireball',
+    
+    -- Post Macro
+    PostMacro = [[
+/use [combat] 13
+/use [combat] 14
+]],
+}
+
+-- ====================================
+-- 输出优化建议脚本
+-- ====================================
+
+/run print("Fire Mage Macro Loaded Successfully!")
+/run print("Alt+Macro = Counterspell")
+/run print("Ctrl+Macro = Dragon's Breath") 
+/run print("Shift+Macro = Ice Block")
+/run print("Keep pressing macro for optimal DPS!")
+
+-- ====================================
+-- 自动饰品使用宏
+-- ====================================
+
+#showtooltip
+/use [combat] 13
+/use [combat] 14
+/cast [nochanneling,talent:Combustion] Combustion
+
+-- ====================================
+-- 移动施法宏
+-- ====================================
+
+#showtooltip Scorch
+/stopcasting
+/cast [moving] Scorch; [nochanneling] Fireball
+
+-- ====================================
+-- 防守生存宏
+-- ====================================
+
+#showtooltip Ice Block
+/stopcasting
+/cast [mod:alt] Greater Invisibility; [mod:ctrl] Mirror Image; Ice Block
