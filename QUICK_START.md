@@ -10,6 +10,7 @@
 /cast [mod:ctrl] Dragon's Breath
 /cast [mod:shift] Ice Block
 /cast [nochanneling,buff:Hot Streak] Pyroblast
+/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast
 /cast [nochanneling,charges:2] Fire Blast
 /cast [nochanneling,charges:3] Phoenix Flames
 /cast [nochanneling,moving] Scorch
@@ -52,13 +53,20 @@
 ## 推荐天赋
 
 ```
-15级: 灼烧
-25级: 烈焰宝珠  
-35级: 焚烧
-40级: 烈焰护体
-45级: 专注魔法
-50级: 烈焰风暴
-55级: 燃烧
+15级: 灼烧 - 移动施法和低血量执行
+25级: 火焰冲击 - 增加暴击几率  
+35级: 焚烧 - 提升充能技能伤害
+40级: 烈焰护体 - 额外火焰冲击充能
+45级: 专注魔法 - 团队增益
+50级: 烈焰风暴 - 高血量阶段暴击保证
+55级: 燃烧 - 核心爆发技能
 ```
 
 完整指南请查看其他文件！
+
+## 更新记录 (Changelog)
+
+**v2.1 (2024年12月)**
+- 更新天赋配置基于最新Icy Veins指南
+- 优化火焰冲击使用优先级
+- 改进加热状态处理逻辑

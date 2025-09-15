@@ -1,7 +1,7 @@
 -- ========================================
--- 魔兽世界火法终极一键宏 v3.0
--- World of Warcraft Fire Mage Ultimate One-Button Macro v3.0
--- 全自动极限输出 + 智能CD管理
+-- 魔兽世界火法终极一键宏 v3.1
+-- World of Warcraft Fire Mage Ultimate One-Button Macro v3.1
+-- 全自动极限输出 + 智能CD管理 (基于最新Icy Veins指南)
 -- ========================================
 
 -- 【主要一键宏 - 复制到游戏内使用】
@@ -14,7 +14,7 @@
 /cast [nochanneling,buff:Combustion] Fire Blast
 /cast [nochanneling,buff:Combustion,buff:Hot Streak] Pyroblast
 /cast [nochanneling,buff:Hot Streak] Pyroblast
-/cast [nochanneling,buff:Heating Up,charges:2] Fire Blast
+/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast
 /cast [nochanneling,buff:Heating Up,charges:1] Phoenix Flames
 /cast [nochanneling,charges:2] Fire Blast
 /cast [nochanneling,charges:3] Phoenix Flames
@@ -162,11 +162,11 @@ end
 
 天赋配置 (Talent Configuration):
 15级: 灼烧 (Scorch) - 移动施法和低血量执行
-25级: 烈焰宝珠 (Blazing Soul) - 增加生存能力
+25级: 火焰冲击 (Fire Blast) - 增加暴击几率和燃烧机制
 35级: 焚烧 (Incineration) - 提升火焰冲击和凤凰烈焰伤害
 40级: 烈焰护体 (Flame On) - 额外火焰冲击充能
 45级: 专注魔法 (Focus Magic) - 团队增益
-50级: 烈焰风暴 (Firestarter) - 高血量阶段优势
+50级: 烈焰风暴 (Firestarter) - 高血量阶段暴击保证
 55级: 燃烧 (Combustion) - 核心爆发技能
 
 属性优先级 (Stat Priority):

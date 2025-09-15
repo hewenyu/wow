@@ -31,7 +31,7 @@
 /cast [mod:shift] Ice Block
 /cast [nochanneling,buff:Combustion] Fire Blast
 /cast [nochanneling,buff:Hot Streak] Pyroblast
-/cast [nochanneling,buff:Heating Up,charges:2] Fire Blast
+/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast
 /cast [nochanneling,charges:2] Fire Blast
 /cast [nochanneling,charges:3] Phoenix Flames
 /cast [nochanneling,target.health.pct<=30] Scorch
@@ -92,13 +92,13 @@ dCd6YaGEfv4rsP8jvv1TuYTKizxsjEfcLMkOsj6AKQQ1fP03fkNdvkDrPQ6GikVcvOAHQqZdsL5jQeRd
 
 ### 推荐天赋 (Recommended Talents)
 ```
-第15级：灼烧 (Scorch)
-第25级：烈焰宝珠 (Blazing Soul) 
-第35级：焚烧 (Incineration)
-第40级：烈焰护体 (Flame On)
-第45级：专注魔法 (Focus Magic)
-第50级：烈焰风暴 (Firestarter)
-第55级：燃烧 (Combustion)
+第15级：灼烧 (Scorch) - 移动施法和低血量执行
+第25级：火焰冲击 (Fire Blast) - 增加暴击几率
+第35级：焚烧 (Incineration) - 提升充能技能伤害
+第40级：烈焰护体 (Flame On) - 额外火焰冲击充能
+第45级：专注魔法 (Focus Magic) - 团队增益
+第50级：烈焰风暴 (Firestarter) - 高血量阶段暴击保证
+第55级：燃烧 (Combustion) - 核心爆发技能
 ```
 
 ### 传说装备 (Legendary Items)

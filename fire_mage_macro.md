@@ -27,7 +27,8 @@
 /cast [nochanneling,buff:Combustion] Fire Blast
 /cast [nochanneling,buff:Combustion,buff:Hot Streak] Pyroblast
 /cast [nochanneling,buff:Hot Streak] Pyroblast
-/cast [nochanneling,buff:Heating Up,charges:2] Fire Blast
+/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast
+/cast [nochanneling,charges:2] Fire Blast
 /cast [nochanneling,charges:3] Phoenix Flames
 /cast [nochanneling,target.health.pct<=30] Scorch
 /cast [nochanneling] Fireball
@@ -72,19 +73,21 @@
 
 ### 优先级系统 (Priority System)
 1. **热连击** (Hot Streak) - 立即释放炎爆术
-2. **火焰冲击** (Fire Blast) - 充能数>=2时使用
-3. **凤凰烈焰** (Phoenix Flames) - 充能数>=3时使用
+2. **火焰冲击** (Fire Blast) - 加热状态时立即使用，充能数>=2时使用
+3. **凤凰烈焰** (Phoenix Flames) - 充能数>=3时使用  
 4. **灼烧** (Scorch) - 目标生命值<=30%时使用
 5. **火球术** (Fireball) - 基础填充技能
 
+**注意**: 更新后的宏更积极地使用火焰冲击来保持热连击状态，提升整体DPS。
+
 ### 天赋推荐 (Recommended Talents)
-- **15级**: 灼烧 (Scorch)
-- **25级**: 烈焰宝珠 (Blazing Soul)
-- **35级**: 焚烧 (Incineration)
-- **40级**: 烈焰护体 (Flame On)
-- **45级**: 专注魔法 (Focus Magic)
-- **50级**: 烈焰风暴 (Firestarter)
-- **55级**: 燃烧 (Combustion)
+- **15级**: 灼烧 (Scorch) - 移动施法和低血量执行
+- **25级**: 火焰冲击 (Fire Blast) - 增加暴击几率
+- **35级**: 焚烧 (Incineration) - 提升火焰冲击和凤凰烈焰伤害
+- **40级**: 烈焰护体 (Flame On) - 额外火焰冲击充能
+- **45级**: 专注魔法 (Focus Magic) - 团队增益
+- **50级**: 烈焰风暴 (Firestarter) - 高血量阶段暴击保证
+- **55级**: 燃烧 (Combustion) - 核心爆发技能
 
 ### 属性优先级 (Stat Priority)
 1. **智力** (Intellect)
