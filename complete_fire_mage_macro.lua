@@ -1,32 +1,32 @@
 -- ========================================
--- 魔兽世界火法终极一键宏 v3.1
--- World of Warcraft Fire Mage Ultimate One-Button Macro v3.1
--- 全自动极限输出 + 智能CD管理 (基于最新Icy Veins指南)
+-- 魔兽世界火法终极一键宏 v11.2.0
+-- World of Warcraft Fire Mage Ultimate One-Button Macro v11.2.0
+-- 地心之战版本 - 500+装等优化 (The War Within - 500+ Item Level Optimized)
 -- ========================================
 
--- 【主要一键宏 - 复制到游戏内使用】
--- 这个宏包含了最优化的火法输出循环
+-- 【主要一键宏 - 11.2版本 - 复制到游戏内使用】
+-- 这个宏包含了最优化的火法输出循环，适配500+装等
 #showtooltip
 /stopcasting
 /targetenemy [noharm][dead]
 /cast [mod:alt] Counterspell; [mod:ctrl] Dragon's Breath; [mod:shift] Ice Block
-/cast [nochanneling,talent:Combustion] Combustion
+/cast [nochanneling] Combustion
 /cast [nochanneling,buff:Combustion] Fire Blast
 /cast [nochanneling,buff:Combustion,buff:Hot Streak] Pyroblast
 /cast [nochanneling,buff:Hot Streak] Pyroblast
-/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast
-/cast [nochanneling,buff:Heating Up,charges:1] Phoenix Flames
-/cast [nochanneling,charges:2] Fire Blast
-/cast [nochanneling,charges:3] Phoenix Flames
-/cast [nochanneling,target.health.pct<=30,talent:Searing Touch] Scorch
+/cast [nochanneling,buff:Heating Up,charges:>=1] Fire Blast
+/cast [nochanneling,buff:Heating Up,charges:>=1] Phoenix Flames
+/cast [nochanneling,charges:>=2] Fire Blast
+/cast [nochanneling,charges:>=2] Phoenix Flames
+/cast [nochanneling,target.health.pct<=30] Scorch
 /cast [nochanneling,moving] Scorch
 /cast [nochanneling] Fireball
 
 -- ========================================
--- 分离版本 - 如果上面的宏太长，使用以下分离版本
+-- 分离版本 - 地心之战11.2优化
 -- ========================================
 
--- 【宏1: 主要输出循环】
+-- 【宏1: 主要输出循环 - 500+装等优化】
 #showtooltip
 /stopcasting
 /targetenemy [noharm][dead]
@@ -34,8 +34,8 @@
 /cast [mod:ctrl] Dragon's Breath
 /cast [mod:shift] Ice Block
 /cast [nochanneling,buff:Hot Streak] Pyroblast
-/cast [nochanneling,buff:Heating Up,charges:2] Fire Blast
-/cast [nochanneling,charges:3] Phoenix Flames
+/cast [nochanneling,buff:Heating Up,charges:>=2] Fire Blast
+/cast [nochanneling,charges:>=2] Phoenix Flames
 /cast [nochanneling,moving] Scorch
 /cast [nochanneling] Fireball
 
@@ -50,15 +50,15 @@
 /cast [nochanneling] Phoenix Flames
 /cast [nochanneling,buff:Hot Streak] Pyroblast
 
--- 【宏3: AOE群体输出】
+-- 【宏3: AOE群体输出 - 11.2版本】
 #showtooltip Flamestrike
 /stopcasting
 /targetenemy [noharm][dead]
 /cast [mod:alt] Counterspell
-/cast [nochanneling,talent:Living Bomb] Living Bomb
+/cast [nochanneling] Living Bomb
 /cast [nochanneling,buff:Hot Streak] Flamestrike
-/cast [nochanneling,charges:2] Fire Blast
-/cast [nochanneling,charges:3] Phoenix Flames
+/cast [nochanneling,charges:>=2] Fire Blast
+/cast [nochanneling,charges:>=2] Phoenix Flames
 /cast [nochanneling] Flamestrike
 
 -- 【宏4: 移动施法专用】
