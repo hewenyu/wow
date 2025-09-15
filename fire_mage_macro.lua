@@ -47,6 +47,7 @@ local advancedMacro = [[
 /cast [nochanneling,buff:Combustion] Pyroblast
 -- 常规循环 Regular Rotation
 /cast [nochanneling,buff:Hot Streak] Pyroblast
+/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast
 /cast [nochanneling,charges:2] Fire Blast
 /cast [nochanneling,charges:3] Phoenix Flames
 /cast [nochanneling,talent:1/1] Scorch

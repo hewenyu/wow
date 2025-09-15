@@ -5,7 +5,11 @@
 
 这是一个专为魔兽世界火法设计的智能一键宏系统，实现全自动极限输出，具备智能CD判断和优先级管理功能。
 
+**最新更新**：天赋配置已更新至最新版本，基于Icy Veins官方指南优化。
+
 This is an intelligent one-button macro system designed for World of Warcraft Fire Mage, achieving fully automated maximum DPS output with smart cooldown management and priority system.
+
+**Latest Update**: Talent configuration updated to the latest version, optimized based on the official Icy Veins guide.
 
 ## ✨ 核心特性 (Core Features)
 
@@ -57,13 +61,13 @@ This is an intelligent one-button macro system designed for World of Warcraft Fi
 ## 🎯 天赋推荐 (Recommended Talents)
 
 ```
-15级: 灼烧 (Scorch)
-25级: 烈焰宝珠 (Blazing Soul)
-35级: 焚烧 (Incineration)  
-40级: 烈焰护体 (Flame On)
-45级: 专注魔法 (Focus Magic)
-50级: 烈焰风暴 (Firestarter)
-55级: 燃烧 (Combustion)
+15级: 灼烧 (Scorch) - 移动施法和低血量执行
+25级: 火焰冲击 (Fire Blast) - 增加暴击几率和燃烧机制
+35级: 焚烧 (Incineration) - 提升火焰冲击和凤凰烈焰伤害  
+40级: 烈焰护体 (Flame On) - 额外火焰冲击充能
+45级: 专注魔法 (Focus Magic) - 团队增益
+50级: 烈焰风暴 (Firestarter) - 高血量阶段暴击保证
+55级: 燃烧 (Combustion) - 核心爆发技能
 ```
 
 ## 📋 属性优先级 (Stat Priority)
@@ -112,6 +116,6 @@ This is an intelligent one-button macro system designed for World of Warcraft Fi
 
 ---
 
-**最后更新**: 2024年
-**版本**: v2.0
-**适用版本**: 魔兽世界正式服
+**最后更新**: 2024年12月 
+**版本**: v2.1
+**适用版本**: 魔兽世界正式服 (基于最新Icy Veins指南)
