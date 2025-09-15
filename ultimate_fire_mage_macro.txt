@@ -1,6 +1,6 @@
--- 魔兽世界火法极限输出一键宏 v2.1
--- Fire Mage Ultimate DPS One-Button Macro v2.1
--- 智能CD管理系统 + 自动优先级判断 (基于最新Icy Veins指南)
+-- 魔兽世界火法极限输出一键宏 v11.2.0
+-- Fire Mage Ultimate DPS One-Button Macro v11.2.0
+-- 地心之战版本 + 500+装等优化 (The War Within + 500+ Item Level Optimized)
 
 -- ====================================
 -- 超级一键宏 - 终极版本
@@ -10,26 +10,26 @@
 /script FireMageHelper.lastCast = FireMageHelper.lastCast or 0
 /script FireMageHelper.combatStart = FireMageHelper.combatStart or 0
 
--- 主宏 - 请复制以下内容到游戏内
+-- 主宏 - 地心之战11.2版本 - 请复制以下内容到游戏内
 #showtooltip
 /stopcasting
 /targetenemy [noharm][dead]
 -- 紧急技能响应
 /cast [mod:alt] Counterspell; [mod:ctrl] Dragon's Breath; [mod:shift] Ice Block
--- 燃烧阶段检测和执行
-/run local inCombustion = UnitBuff("player", "Combustion"); if inCombustion then CastSpellByName("Fire Blast") end
-/cast [nochanneling,buff:Combustion,buff:Hot Streak] Pyroblast
+-- 燃烧阶段检测和执行（11.2优化）
+/cast [nochanneling] Combustion
 /cast [nochanneling,buff:Combustion] Fire Blast
+/cast [nochanneling,buff:Combustion,buff:Hot Streak] Pyroblast
 -- 热连击优先级
 /cast [nochanneling,buff:Hot Streak] Pyroblast
--- 加热状态处理
-/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast
-/cast [nochanneling,buff:Heating Up,charges:1] Phoenix Flames
--- 充能管理
-/cast [nochanneling,charges:2] Fire Blast
-/cast [nochanneling,charges:3] Phoenix Flames
+-- 加热状态处理（500+装等优化）
+/cast [nochanneling,buff:Heating Up,charges:>=1] Fire Blast
+/cast [nochanneling,buff:Heating Up,charges:>=1] Phoenix Flames
+-- 充能管理（地心之战调整）
+/cast [nochanneling,charges:>=2] Fire Blast
+/cast [nochanneling,charges:>=2] Phoenix Flames
 -- 特殊情况处理
-/cast [nochanneling,target.health.pct<=30,talent:Searing Touch] Scorch
+/cast [nochanneling,target.health.pct<=30] Scorch
 /cast [nochanneling,moving] Scorch
 -- 基础技能
 /cast [nochanneling] Fireball
@@ -59,10 +59,10 @@
 /targetenemy [noharm][dead]
 /cast [mod:alt] Counterspell
 /cast [mod:ctrl] Dragon's Breath
-/cast [nochanneling,talent:Living Bomb] Living Bomb
+/cast [nochanneling] Living Bomb
 /cast [nochanneling,buff:Hot Streak] Flamestrike
-/cast [nochanneling,charges:2] Fire Blast
-/cast [nochanneling,charges:3] Phoenix Flames
+/cast [nochanneling,charges:>=2] Fire Blast
+/cast [nochanneling,charges:>=2] Phoenix Flames
 /cast [nochanneling] Flamestrike
 
 -- ====================================
@@ -115,9 +115,9 @@ Sequences['FireMageUltimate'] = {
     '/cast [mod:shift] Combustion',
     '/cast [nochanneling,buff:Hot Streak] Pyroblast',
     '/cast [nochanneling,buff:Combustion] Fire Blast',
-    '/cast [nochanneling,buff:Heating Up,charges:1] Fire Blast',
-    '/cast [nochanneling,charges:2] Fire Blast',
-    '/cast [nochanneling,charges:3] Phoenix Flames',
+    '/cast [nochanneling,buff:Heating Up,charges:>=1] Fire Blast',
+    '/cast [nochanneling,charges:>=2] Fire Blast',
+    '/cast [nochanneling,charges:>=2] Phoenix Flames',
     '/cast [nochanneling,target.health.pct<=30] Scorch',
     '/cast [nochanneling,moving] Scorch',
     '/cast [nochanneling] Fireball',
@@ -146,7 +146,7 @@ Sequences['FireMageUltimate'] = {
 #showtooltip
 /use [combat] 13
 /use [combat] 14
-/cast [nochanneling,talent:Combustion] Combustion
+/cast [nochanneling] Combustion
 
 -- ====================================
 -- 移动施法宏
